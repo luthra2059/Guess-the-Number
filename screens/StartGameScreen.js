@@ -33,7 +33,9 @@ const StartGameScreen = props => {
     }
     let confirmedOutput;
     if (confirmed) {
-        confirmedOutput = <Card style={styles.summaryContainer}><Text>You Selected</Text><NumberComponent>{selectedNumber}</NumberComponent><Button title="START GAME" onPress={()=>props.onStartGame(selectedNumber)}/></Card>;
+        confirmedOutput = <Card style={styles.summaryContainer}><Text>You
+            Selected</Text><NumberComponent>{selectedNumber}</NumberComponent><Button title="START GAME"
+                                                                                      onPress={() => props.onStartGame(selectedNumber)}/></Card>;
     }
     return (
         <TouchableWithoutFeedback onPress={() => {
@@ -47,9 +49,9 @@ const StartGameScreen = props => {
                            autoCaptalize={false} keyboardType="number-pad" maxLength={2}/>
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}><Button onPress={resetInputHandler} title="Reset"
-                                                            color={colors.accent} /></View>
+                                                            color={colors.accent}/></View>
                         <View style={styles.button}><Button onPress={confirmInputHandler} title="Confirm"
-                                                            color={colors.primary} /></View>
+                                                            color={colors.primary}/></View>
                     </View>
                 </Card>
                 {confirmedOutput}
